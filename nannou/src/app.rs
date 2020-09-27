@@ -546,7 +546,7 @@ impl LoopMode {
         LoopMode::Wait
     }
 
-    /// Specify the **Ntimes** mode with one update
+    /// Specify the **Ntimes** mode with the desired number of updates
     ///
     /// Waits long enough to ensure loop iteration never occurs faster than the given `max_fps`.
     pub fn loop_ntimes(number_of_updates: usize) -> Self {
@@ -1608,7 +1608,7 @@ where
         _ => false,
     };
 
-    // If any exist conditions were triggered, indicate so.
+    // If any exit conditions were triggered, indicate so.
     let exit = if loop_destroyed || exit_on_escape || app.windows.borrow().is_empty() {
         true
     } else {
